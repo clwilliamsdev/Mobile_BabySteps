@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BabySteps.Views.SleepPage"
+             Title="Sleep">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit"
+                 IconImageSource="example_icon.png"
+                 Order="Primary"
+                 Priority="0" 
+                 Clicked="Exit_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="LightYellow" />
+            <Setter Property="BorderColor" Value="Blue" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame>
+            <Grid Padding="10,20,10,40"
+                RowDefinitions="Auto,Auto,Auto,auto,Auto,Auto,Auto,auto">
+                <Label x:Name="SleepStartLabelD"  
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="Small"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label x:Name="SleepStartLabelT"  
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="Medium"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />                    
+                <Label x:Name="SleepStopLabelD" 
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Small"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label x:Name="SleepStopLabelT" 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="Medium"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Button x:Name="SleepStart"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    CornerRadius="25"
+                    BorderWidth="2"
+                    BorderColor="DarkGray"
+                    Text="Start"                
+                    Clicked="SleepStart_Click"/>
+                <Button x:Name="SleepStop"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    CornerRadius="25"
+                    BorderWidth="2"
+                    BorderColor="DarkGray"
+                    Text="Stop"                
+                    Clicked="SleepStop_Click"/>
+                <Label x:Name="SleepDurationLabel"  
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    FontSize="Medium"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Button x:Name="SleepSave"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    CornerRadius="25"
+                    BorderWidth="2"
+                    BorderColor="DarkGray"
+                    Text="Save"                
+                    Clicked="SleepSaveButton_Clicked"/>
+                <BoxView 
+                    Grid.Row="5" 
+                    Grid.ColumnSpan="2"
+                    HeightRequest="1"
+                    Color="LightGray" />
+                <ScrollView Grid.Row="6"
+                    Grid.ColumnSpan="2"                    
+                    BackgroundColor="LightYellow">
+                    <CollectionView x:Name="sleepView">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame VerticalOptions="Center"
+                                       HeightRequest="0"
+                                       BackgroundColor="LightBlue">
+                                    <StackLayout Orientation="Horizontal"
+                                        HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding SleepBeginDate}"
+                                           TextColor="Black" 
+                                           FontSize="16"/>
+                                        <Label Text="{Binding SleepBeginTime}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                        <Label Text="{Binding SleepEndDate}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                        <Label Text="{Binding SleepEndTime}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                        <Label Text="{Binding SleepDuration}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
+
+

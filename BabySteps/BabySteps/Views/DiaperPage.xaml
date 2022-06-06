@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BabySteps.Views.DiaperPage"
+             xmlns:viewmodels="clr-namespace:BabySteps.ViewModels"
+             Title="Diaper Change">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit"
+            IconImageSource="example_icon.png"
+            Order="Primary"
+            Priority="0" 
+            Clicked="Exit_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="LightYellow" />
+            <Setter Property="BorderColor" Value="Blue" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame>
+            <Grid RowDefinitions="Auto,Auto,Auto,1,Auto">
+                <Label Grid.Row="0"
+                    Grid.ColumnSpan ="3"
+                    Text="Diaper Contents"
+                    FontSize="Large"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <RadioButton x:Name="PeeButton"
+                    Content="Pee"
+                    Grid.Row="1"
+                    Grid.Column="0"                
+                    HorizontalOptions="CenterAndExpand"
+                    GroupName="Contents"/>
+                <RadioButton x:Name="PooButton"
+                    Content="Poo"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="CenterAndExpand" 
+                    GroupName="Contents"/>
+                <RadioButton x:Name="BothButton"
+                    Content="Both"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalOptions="CenterAndExpand" 
+                    GroupName="Contents"/>
+                <Button x:Name="DiaperSaveButton"
+                    Text="Save"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"  
+                    CornerRadius="25"
+                    BorderWidth="2"
+                    BorderColor="DarkGray"
+                    Clicked="DiaperSaveButton_Clicked"/>
+                <BoxView Grid.Row="3"
+                    Grid.ColumnSpan="3"
+                    HeightRequest="1"
+                    Color="LightGray"
+                    Margin ="40, 0, 40, 0"/>
+                <ScrollView 
+                    Grid.Row="4"
+                    Grid.ColumnSpan ="3"
+                    BackgroundColor="LightYellow">
+                    <CollectionView x:Name="diaperView">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame VerticalOptions="Center"
+                                       HeightRequest="5"
+                                       BackgroundColor="LightBlue">
+                                    <StackLayout Orientation="Horizontal"
+                                                 HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Type}"
+                                           TextColor="Black" 
+                                            FontSize="16"/>
+                                        <Label Text="{Binding ChangeDate}"
+                                           TextColor="Black"
+                                            FontSize="16"/>
+                                        <Label Text="{Binding ChangeTime}"
+                                           TextColor="Black"
+                                            FontSize="16"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

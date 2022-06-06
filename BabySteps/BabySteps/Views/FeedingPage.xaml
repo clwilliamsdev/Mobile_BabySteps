@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BabySteps.Views.FeedingPage"
+             Title="Feeding">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit"
+            IconImageSource="example_icon.png"
+            Order="Primary"
+            Priority="0" 
+            Clicked="Exit_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="LightYellow" />
+            <Setter Property="BorderColor" Value="Blue" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+        <ResourceDictionary>
+            <x:Array x:Key="typePicker" Type="{x:Type x:String}">
+                <x:String>Bottle</x:String>
+                <x:String>Meal</x:String>
+                <x:String>Left</x:String>
+                <x:String>Right</x:String>               
+            </x:Array>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame>
+            <Grid Padding="10,10,10,40"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,1,Auto"
+                ColumnDefinitions="125,*">
+            <Label Grid.Row="0"
+                Grid.Column="0"
+                Text="Type:"
+                FontSize="18"
+                VerticalOptions="CenterAndExpand" />                
+            <Picker x:Name="feedingtypePicker"
+                ItemsSource="{StaticResource typePicker}"                
+                Grid.Row="0"
+                Grid.Column="1"
+                Title="           Select Type"
+                TitleColor="Blue">               
+            </Picker>
+            <Label Grid.Row="1"
+                Grid.Column="0"
+                Text="Of:"
+                FontSize="18"
+                VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="ofEntry"
+                Grid.Row="1"
+                Grid.Column="1"
+                Keyboard="Default"                             
+                VerticalOptions="CenterAndExpand" />
+            <Label Grid.Row="2"
+                Grid.Column="0"
+                Text="Amount Ozs:"
+                FontSize="18"
+                VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="amountEntry"
+                Grid.Row="2"
+                Grid.Column="1"
+                Keyboard="Numeric"                             
+                VerticalOptions="CenterAndExpand" />
+            <Label x:Name="FeedingStartLabelD"  
+                Grid.Row="3"
+                Grid.Column="0"
+                FontSize="Small"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="FeedingStartLabelT"  
+                Grid.Row="4"
+                Grid.Column="0"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="FeedingStopLabelD" 
+                Grid.Row="3"
+                Grid.Column="1"
+                FontSize="Small"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="FeedingStopLabelT" 
+                Grid.Row="4"
+                Grid.Column="1"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="feedingStartButton"
+                Grid.Row="5"
+                Grid.Column="0"
+                CornerRadius="25"
+                BorderWidth="2"
+                BorderColor="DarkGray"
+                Text="Start"                
+                Clicked="FeedingStartButton_Click"/>
+            <Button x:Name="feedingStopButton"
+                Grid.Row="5"
+                Grid.Column="1"
+                CornerRadius="25"
+                BorderWidth="2"
+                BorderColor="DarkGray"
+                Text="Stop"                
+                Clicked="FeedingStopButton_Click"/>
+            <Label x:Name="FeedingDurationLabel"  
+                Grid.Row="6"
+                Grid.ColumnSpan="2"
+                FontSize="Large"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="FeedingSaveButton"
+                Grid.Row="7"
+                Grid.ColumnSpan="2"
+                CornerRadius="25"
+                BorderWidth="2"
+                BorderColor="DarkGray"
+                Text="Save"                
+                Clicked="FeedingSaveButton_Clicked"/>
+            <BoxView Grid.Row="8"
+                Grid.ColumnSpan="2"
+                HeightRequest="1"
+                Color="LightGray" />
+            <ScrollView Grid.Row="9"
+                Grid.ColumnSpan ="2"
+                BackgroundColor="White"
+                MinimumHeightRequest="180">
+                <CollectionView x:Name="feedingView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                             <Frame VerticalOptions="Center"
+                                HeightRequest="20"
+                                BackgroundColor="LightBlue">
+                                <Grid HorizontalOptions="CenterAndExpand">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal"
+                                            Grid.Row="0">
+                                            <Label Text="{Binding FeedingBeginDate}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                            <Label Text="{Binding FeedingBeginTime}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal"
+                                            Grid.Row="1">
+                                            <Label Text="{Binding FeedingType}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                            <Label Text="{Binding FeedingOf}"
+                                                TextColor="Black" 
+                                                FontSize="16"/>
+                                            <Label Text="{Binding FeedingAmount}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                            <Label Text="{Binding FeedingDuration}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

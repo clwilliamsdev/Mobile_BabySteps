@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BabySteps.Views.ResetPage"
+             Title="Reset">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit"
+            IconImageSource="example_icon.png"
+            Order="Primary"
+            Priority="0" 
+            Clicked="Exit_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="LightYellow" />
+            <Setter Property="BorderColor" Value="Blue" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Reset to Blank Database"
+                    HorizontalOptions="CenterAndExpand"
+                    FontSize="Large"/>
+                <Button
+                    x:Name="ResetButton"
+                    Text="Reset Database"
+                    CornerRadius="25"
+                    BorderWidth="2"
+                    BorderColor="DarkGray"
+                    Clicked="ResetButton_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

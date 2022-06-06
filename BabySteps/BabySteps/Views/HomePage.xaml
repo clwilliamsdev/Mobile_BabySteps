@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BabySteps.Views.HomePage"
+             xmlns:viewmodels="clr-namespace:BabySteps.ViewModels"
+             Title="Baby Steps">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit"
+            IconImageSource="example_icon.png"
+            Order="Primary"
+            Priority="0" 
+            Clicked="Exit_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="LightYellow" />
+            <Setter Property="BorderColor" Value="Blue" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="15" />
+        </Style>       
+    </ContentPage.Resources>  
+    <ContentPage.Content>
+        <Frame>
+            <StackLayout>
+                <StackLayout>
+                    <Label
+                        Text="Welcome to BabySteps!"
+                        FontSize="Large"                               
+                        HorizontalOptions="Center" 
+                        Padding="10"/>                
+                    <CollectionView x:Name="babyView"                                                        
+                        BackgroundColor="LightYellow">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout >
+                                        <Label Text="{Binding FirstName}"
+                                            TextColor="Black"                                        
+                                            FontSize="50"
+                                            HorizontalOptions="Center"/>                                
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Feeding"                         
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+                    <CollectionView x:Name="feedingView">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame VerticalOptions="Center"
+                                       HeightRequest="20"
+                                       BackgroundColor="LightBlue">
+                                    <Grid HorizontalOptions="CenterAndExpand">
+                                        <StackLayout>
+                                            <StackLayout Orientation="Horizontal"
+                                                Grid.Row="0">
+                                                <Label Text="{Binding FeedingBeginDate}"
+                                                    TextColor="Black"
+                                                    FontSize="16"/>
+                                                <Label Text="{Binding FeedingBeginTime}"
+                                                    TextColor="Black"
+                                                    FontSize="16"/>   
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal"
+                                                Grid.Row="1">                                            
+                                                <Label Text="{Binding FeedingType}"
+                                                    TextColor="Black"
+                                                    FontSize="16"/>
+                                                <Label Text="{Binding FeedingOf}"
+                                                    TextColor="Black" 
+                                                    FontSize="16"/>
+                                                <Label Text="{Binding FeedingAmount}"
+                                                    TextColor="Black"
+                                                    FontSize="16"/>
+                                                <Label Text="{Binding FeedingDuration}"
+                                                    TextColor="Black"
+                                                    FontSize="16"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Diaper"                         
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+                    <CollectionView x:Name="diaperView">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame VerticalOptions="Center"                                       
+                                       HeightRequest="20"
+                                       BackgroundColor="LightBlue">
+                                    <StackLayout Orientation="Horizontal"                                         
+                                        HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding ChangeDate}"
+                                            TextColor="Black"
+                                            FontSize="16"/>
+                                        <Label Text="{Binding ChangeTime}"
+                                            TextColor="Black"
+                                            FontSize="16"/>
+                                        <Label Text="{Binding Type}"
+                                            TextColor="Black"
+                                            FontSize="16"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Sleep"                         
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+                    <CollectionView x:Name="sleepView">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame VerticalOptions="Center"                                       
+                                       HeightRequest="20"
+                                       BackgroundColor="LightBlue">
+                                    <StackLayout Orientation="Horizontal"
+                                         HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding SleepBeginDate}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                        <Label Text="{Binding SleepBeginTime}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                        <Label Text="{Binding SleepEndTime}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                        <Label Text="{Binding SleepDuration}"
+                                           TextColor="Black"
+                                           FontSize="16"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
