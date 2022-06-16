@@ -41,14 +41,14 @@ namespace BabySteps.Views
                 int weightL = Convert.ToInt32(weightLbs.Text);
                 int weightO = Convert.ToInt32(weightOz.Text);
                 int heightIn = Convert.ToInt32(height.Text);
-                string a = String.Format("{0:d}", dob.Date);
+                string dOB = String.Format("{0:d}", dob.Date);
 
                 await App.Database.SaveBabyAsync(new BabyModel
                 {
                     // Saves data to the table
                     FirstName = firstName.Text,
                     LastName = lastName.Text,
-                    DOB = a,
+                    DOB = dOB,
                     WeightLbs = weightL,
                     WeightOz = weightO,
                     Height = heightIn

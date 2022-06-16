@@ -106,23 +106,23 @@
                                     BackgroundColor="LightBlue">
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding FirstName}"
-                                           TextColor="Black" 
-                                           FontSize="16"/>
+                                            TextColor="Black" 
+                                            FontSize="16"/>
                                         <Label Text="{Binding LastName}"
-                                           TextColor="Black"
-                                           FontSize="16"/>
+                                            TextColor="Black"
+                                            FontSize="16"/>
                                         <Label Text="{Binding DOB}"
-                                           TextColor="Black"
-                                           FontSize="16"/>
+                                            TextColor="Black"
+                                            FontSize="16"/>
                                         <Label Text="{Binding Height}"
-                                           TextColor="Black"
-                                           FontSize="16"/>
+                                            TextColor="Black"
+                                            FontSize="16"/>
                                         <Label Text="{Binding WeightLbs}"
-                                           TextColor="Black"
-                                           FontSize="16"/>
+                                            TextColor="Black"
+                                            FontSize="16"/>
                                         <Label Text="{Binding WeightOz}"
-                                           TextColor="Black"
-                                           FontSize="16"/>
+                                            TextColor="Black"
+                                            FontSize="16"/>
                                     </StackLayout>
                                 </Frame>
                             </DataTemplate>
