@@ -129,11 +129,12 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                              <Frame VerticalOptions="Center"
-                                HeightRequest="20"
+                                HeightRequest="25"
                                 BackgroundColor="LightBlue">
                                 <Grid HorizontalOptions="CenterAndExpand">
                                     <StackLayout>
                                         <StackLayout Orientation="Horizontal"
+                                                     HorizontalOptions="Center"
                                             Grid.Row="0">
                                             <Label Text="{Binding FeedingBeginDate}"
                                                 TextColor="Black"
@@ -151,6 +152,9 @@
                                                 TextColor="Black" 
                                                 FontSize="16"/>
                                             <Label Text="{Binding FeedingAmount}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                            <Label Text="Oz"
                                                 TextColor="Black"
                                                 FontSize="16"/>
                                             <Label Text="{Binding FeedingDuration}"

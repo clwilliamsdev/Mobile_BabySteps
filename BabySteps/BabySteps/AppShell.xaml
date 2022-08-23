@@ -30,6 +30,7 @@
             -->
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontSize" Value="Medium" ></Setter>
             </Style>
             <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
                 <Setter Property="VisualStateManager.VisualStateGroups">
@@ -71,22 +72,22 @@
     <!-- 
         Navagation for all of the pages
     -->
-    <FlyoutItem Title="Home" Icon="icon_about.png">
+    <FlyoutItem Title="Home">
         <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Baby" Icon="icon_about.png">
+    <FlyoutItem Title="Baby">
         <ShellContent Route="BabyPage" ContentTemplate="{DataTemplate local:BabyPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Diaper" Icon="icon_about.png">
+    <FlyoutItem Title="Diaper" >
         <ShellContent Route="DiaperPage" ContentTemplate="{DataTemplate local:DiaperPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Sleep" Icon="icon_about.png">
+    <FlyoutItem Title="Sleep">
         <ShellContent Route="SleepPage" ContentTemplate="{DataTemplate local:SleepPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Feeding" Icon="icon_about.png">
+    <FlyoutItem Title="Feeding">
         <ShellContent Route="FeedingPage" ContentTemplate="{DataTemplate local:FeedingPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Reset" Icon="icon_about.png">
+    <FlyoutItem Title="Reset">
         <ShellContent Route="ResetPage" ContentTemplate="{DataTemplate local:ResetPage}" />
     </FlyoutItem>
 </Shell>

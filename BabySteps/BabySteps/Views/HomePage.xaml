@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BabySteps.Views.HomePage"
-             xmlns:viewmodels="clr-namespace:BabySteps.ViewModels"
+             
              Title="Baby Steps">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Exit"
@@ -50,33 +50,38 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame VerticalOptions="Center"
-                                       HeightRequest="20"
+                                       HeightRequest="25"
                                        BackgroundColor="LightBlue">
                                     <Grid HorizontalOptions="CenterAndExpand">
                                         <StackLayout>
                                             <StackLayout Orientation="Horizontal"
+                                                         HorizontalOptions="Center"
+                                                         
                                                 Grid.Row="0">
                                                 <Label Text="{Binding FeedingBeginDate}"
                                                     TextColor="Black"
                                                     FontSize="16"/>
                                                 <Label Text="{Binding FeedingBeginTime}"
                                                     TextColor="Black"
-                                                    FontSize="16"/>   
+                                                    FontSize="16"/>
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal"
-                                                Grid.Row="1">                                            
-                                                <Label Text="{Binding FeedingType}"
-                                                    TextColor="Black"
-                                                    FontSize="16"/>
-                                                <Label Text="{Binding FeedingOf}"
-                                                    TextColor="Black" 
-                                                    FontSize="16"/>
-                                                <Label Text="{Binding FeedingAmount}"
-                                                    TextColor="Black"
-                                                    FontSize="16"/>
-                                                <Label Text="{Binding FeedingDuration}"
-                                                    TextColor="Black"
-                                                    FontSize="16"/>
+                                            Grid.Row="1">
+                                            <Label Text="{Binding FeedingType}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                            <Label Text="{Binding FeedingOf}"
+                                                TextColor="Black" 
+                                                FontSize="16"/>
+                                            <Label Text="{Binding FeedingAmount}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                            <Label Text="Oz"
+                                                TextColor="Black"
+                                                FontSize="16"/>
+                                            <Label Text="{Binding FeedingDuration}"
+                                                TextColor="Black"
+                                                FontSize="16"/>
                                             </StackLayout>
                                         </StackLayout>
                                     </Grid>
@@ -96,7 +101,8 @@
                                        HeightRequest="20"
                                        BackgroundColor="LightBlue">
                                     <StackLayout Orientation="Horizontal"                                         
-                                        HorizontalOptions="CenterAndExpand">
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="Center">                                        
                                         <Label Text="{Binding ChangeDate}"
                                             TextColor="Black"
                                             FontSize="16"/>
@@ -123,7 +129,8 @@
                                        HeightRequest="20"
                                        BackgroundColor="LightBlue">
                                     <StackLayout Orientation="Horizontal"
-                                         HorizontalOptions="CenterAndExpand">
+                                         HorizontalOptions="CenterAndExpand"
+                                                 VerticalOptions="Center">
                                         <Label Text="{Binding SleepBeginDate}"
                                            TextColor="Black"
                                            FontSize="16"/>

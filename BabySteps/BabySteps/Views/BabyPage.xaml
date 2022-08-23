@@ -102,9 +102,11 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame VerticalOptions="Center"
-                                    HeightRequest="0"
+                                    HeightRequest="25"
                                     BackgroundColor="LightBlue">
-                                    <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                    <StackLayout Orientation="Horizontal"
+                                                 HorizontalOptions="Center">
                                         <Label Text="{Binding FirstName}"
                                             TextColor="Black" 
                                             FontSize="16"/>
@@ -114,15 +116,29 @@
                                         <Label Text="{Binding DOB}"
                                             TextColor="Black"
                                             FontSize="16"/>
-                                        <Label Text="{Binding Height}"
+                                    </StackLayout>
+                                        <StackLayout Orientation="Horizontal"
+                                                 HorizontalOptions="Center"
+                                                     >
+                                    <Label Text="{Binding Height}"
                                             TextColor="Black"
+                                            FontSize="16"/>
+                                            <Label Text="In"
+                                                   TextColor="Black"
                                             FontSize="16"/>
                                         <Label Text="{Binding WeightLbs}"
                                             TextColor="Black"
                                             FontSize="16"/>
+                                            <Label Text="Lbs"
+                                                   TextColor="Black"
+                                            FontSize="16"/>
                                         <Label Text="{Binding WeightOz}"
                                             TextColor="Black"
                                             FontSize="16"/>
+                                            <Label Text="Oz"
+                                                   TextColor="Black"
+                                            FontSize="16"/>
+                                    </StackLayout>
                                     </StackLayout>
                                 </Frame>
                             </DataTemplate>

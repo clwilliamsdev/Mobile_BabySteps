@@ -142,4 +142,13 @@
       <Name>BabySteps</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\diaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feeding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sleep.png" />
+  </ItemGroup>
 </Project>
